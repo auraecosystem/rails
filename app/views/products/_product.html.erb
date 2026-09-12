@@ -1,0 +1,15 @@
+<%# app/views/products/_product.html.erb %>
+
+<% local_assigns => { product:, **options } %>
+
+<%= tag.div id: dom_id(product), **options do %>
+  <h1><%= product.name %></h1>
+<% end %>
+
+<%# app/views/products/show.html.erb %>
+
+<%= render "products/product", product: @product, class: "card" %>
+<%# => <div id="product_1" class="card">
+  #      <h1>A widget</h1>
+  #    </div>
+%>
