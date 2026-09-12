@@ -1,0 +1,10 @@
+<%# app/views/products/_product.html.erb %>
+
+<%= tag.div id: dom_id(my_product) do %>
+  <h1><%= my_product.name %></h1>
+
+  <%# => raises ActionView::Template::Error for `product_reviews` %>
+  <% product_reviews.each do |review| %>
+    <%# ... %>
+  <% end %>
+<% end %>
